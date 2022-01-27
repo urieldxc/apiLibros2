@@ -1,0 +1,30 @@
+<h1>Editar Libro</h1>
+
+{{#if data}}
+    {{#each data}}
+        <form action="/edit-book/{{title}}" method="POST">
+
+                <div>
+                    <label for="iTitle">Title:</label>
+                    <input type="text" name="title" id="iTitle" value="{{title}}">
+                    
+                </div>
+                <div>
+                    <label for="iAuthor">Author:</label>
+                    <input type="text" name="author" id="iAuthor" value="{{author}}">
+                </div>
+                <div>
+                    <label for="iPages">Pages:</label>
+                    <input type="number" name="pages" id="iPages" value="{{pages}}">
+                </div>
+                <div>
+                    <label for="iGenere">Genere:</label>
+                    <input type="text" name="genere" id="iGenere" value="{{genere}}">
+                </div>
+                <div>
+                    <input id="iSend" type="submit" value="Send">
+                </div>
+                
+            </form>
+    {{/each}}
+{{/if}}

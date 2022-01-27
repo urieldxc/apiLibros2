@@ -1,0 +1,26 @@
+
+<h1>Lista de libros</h1>
+
+<div class="container">
+{{#if data}}
+    {{#each data}}
+    <div class="divBooks">
+        <div>
+            <h3>Title:</h3>
+            <p>{{title}}</p>
+    
+            <h3>Author:</h3>
+            <p>{{author}}</p>
+        </div>
+        
+        <div>
+            <h3>Pages:</h3>
+            <p>{{pages}}</p>
+            <h3>Genere:</h3>
+            <p>{{genere}}</p>
+        </div>
+    </div>
+
+    {{/each}}
+{{/if}}
+</div>

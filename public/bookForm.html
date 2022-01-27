@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Inserte un libro</h1>
+    <form action="/new-book" method="POST">
+
+        <div>
+            <label for="iTitle">Title:</label>
+            <input type="text" name="title" id="iTitle">
+        </div>
+        <div>
+            <label for="iAuthor">Author:</label>
+            <input type="text" name="author" id="iAuthor">
+        </div>
+        <div>
+            <label for="iPages">Pages:</label>
+            <input type="number" name="pages" id="iPages">
+        </div>
+        <div>
+            <label for="iGenere">Genere:</label>
+            <input type="text" name="genere" id="iGenere">
+        </div>
+        <div>
+            <input id="iSend" type="submit" value="Send">
+        </div>
+        
+    </form>
+</body>
+</html>
