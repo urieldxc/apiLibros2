@@ -3,27 +3,28 @@ const router = express.Router();
 const path = require("path")
 const controller = require("../controller")
 
-// BASIC NAVIGATION
+//LANDING
 router.get("/", controller.landing);
 
-//GET ALL
+//BUSCAR TODOS
 router.get("/book-list", controller.bookList)
 
-//GET ONE
-router.get("/search-book", controller.searchBook)
-router.post("/search-book", controller.bookInfo)
+//BUSCAR UNO
+router.get("/search-book", controller.searchBook);
+router.post("/search-book", controller.bookInfo);
 
-//CREATE ONE
-router.get("/new-book", controller.getFormNewBook)
-router.post("/new-book", controller.createNewBook)
-//UPDATE ONE
+//CREAR
+router.get("/new-book", controller.getFormNewBook);
+router.post("/new-book", controller.createNewBook);
+
+//EDITAR
 router.get("/edit-book", controller.getFormEditBook);
 router.post("/edit-book/", controller.getEditInfo);
 router.post("/edit-book/:title", controller.editBook)
 
 
-//DELETE ONE
-router.get("/delete-book", controller.deleteBookFind)
-router.post("/delete-book", controller.deleteBook)
+//BORRAR
+router.get("/delete-book", controller.deleteBookFind);
+router.post("/delete-book", controller.deleteBook);
 
-module.exports = router
+module.exports = router;
