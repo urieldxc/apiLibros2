@@ -20,11 +20,11 @@ router.post("/new-book", controller.createNewBook);
 //EDITAR
 router.get("/edit-book", controller.getFormEditBook);
 router.post("/edit-book/", controller.getEditInfo);
-router.post("/edit-book/:title", controller.editBook)
+router.put("/edit-book/:title", controller.editBook)
 
 
 //BORRAR
 router.get("/delete-book", controller.deleteBookFind);
-router.post("/delete-book", controller.deleteBook);
+router.delete("/delete-book", controller.deleteBook)
 
 module.exports = router;

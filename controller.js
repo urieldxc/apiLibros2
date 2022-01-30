@@ -67,18 +67,40 @@ exports.deleteBookFind = (req,res)=>{
     res.sendFile(path.join(__dirname, "public", "deleteBook.html"));
 }
 
+// exports.deleteBook = async(req,res)=>{
+//     const searchBook = await Books.find({title: req.body.title});
+//     if(searchBook == ""){
+//         const msg = {};
+//         msg.content = "El libro no ha sido encontrado!";
+//         res.render("message.handlebars", {data:{msg:msg}});
+//     }
+//     if (searchBook != ""){
+//         await Books.deleteOne({title: req.body.title});
+//         const msg = {};
+//         msg.content = "Libro eliminado con éxito!";
+//         res.render("message.handlebars", {data:{msg:msg}});
+//     }
+    
+// }
+
 exports.deleteBook = async(req,res)=>{
-    const searchBook = await Books.find({title: req.body.title});
-    if(searchBook == ""){
-        const msg = {};
-        msg.content = "El libro no ha sido encontrado!";
-        res.render("message.handlebars", {data:{msg:msg}});
+    try {
+        const book = await Books.deleteOne({title: req.body.title}).exec();
+        console.log(book)
+        res.json(book);
+    } catch (error) {
+        res.send(err);
     }
-    if (searchBook != ""){
-        await Books.deleteOne({title: req.body.title});
-        const msg = {};
-        msg.content = "Libro eliminado con éxito!";
-        res.render("message.handlebars", {data:{msg:msg}});
-    }
+    // if(searchBook == ""){
+    //     const msg = {};
+    //     msg.content = "El libro no ha sido encontrado!";
+    //     res.render("message.handlebars", {data:{msg:msg}});
+    // }
+    // if (searchBook != ""){
+    //     await Books.deleteOne({title: req.body.title});
+    //     const msg = {};
+    //     msg.content = "Libro eliminado con éxito!";
+    //     res.render("message.handlebars", {data:{msg:msg}});
+    // }
     
 }
